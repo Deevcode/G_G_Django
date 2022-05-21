@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnomarket</title>
+    <title>Guetto Garden</title>
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
     {% load static %}
@@ -24,12 +24,12 @@
             <nav id="nav">
                 <ul>
                     <li>
-                        <a href="index.html"> Inicio </a>
+                        <a href="{% url 'home' %}"> Inicio </a>
                     </li>
                     <li>
-                        <a href="contacto.html">Contacto</a>
+                        <a href="{% url 'contacto' %}">Contacto</a>
                     </li>
-                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="{% url 'galeria' %}">Galería</a></li>
                 </ul>
             </nav>
 
