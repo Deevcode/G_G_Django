@@ -2,6 +2,15 @@
 {% extends 'core/base.html' %}
 <!-- Carga carpeta static para JS CSS y IMG -->
 {% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+{% endblock %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+{% endblock %}
+
 <!-- LLamo al bloque contenido insertado en [base.html] -->
 {% block contenido %}
         <h2>Galería de nuestra tienda</h2>
