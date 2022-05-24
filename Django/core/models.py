@@ -3,7 +3,7 @@ from pyexpat import model
 from django.db import models
 
 # Create your models here.
-class Marca(models.Model):
+class Categoria(models.Model):
     nombre = models.CharField(max_length=50)
 
     def __str__(self):
@@ -15,7 +15,7 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=50)
     precio = models.IntegerField()
     descripcion = models.TextField()
-    marca = models.ForeignKey(Marca, on_delete=models.PROTECT)
+    marca = models.ForeignKey(Categoria, on_delete=models.PROTECT)
     fecha_publicacion = models.DateField()
   
     imagen = models.ImageField(upload_to="productos", null=True)
