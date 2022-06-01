@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'colorfield',
     'django.contrib.humanize',
+    'django_seed',
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'
