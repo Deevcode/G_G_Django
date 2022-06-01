@@ -1,9 +1,24 @@
 [
+    
     {
         "pk": 1,
         "model": "core.Categoria",
         "fields": {
-            "nombre" : "herramientas"
+            "nombre" : "Plantas"
+        }
+    },
+
+    {
+        "pk": 2,
+        "model": "core.Producto",
+        "fields": {
+            "nombre" : "ficus",
+            "precio" : "12000",
+            "descripcion" : "planta en optimas condiciones",
+            "marca" : 1,
+            "fecha_publicacion" : "2022-10-10"
+
+            
         }
     }
 ]
