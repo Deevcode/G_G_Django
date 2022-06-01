@@ -22,3 +22,21 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre
+
+opciones = [
+    [0, "Seleccione Region"],
+    [1, "region 1"],
+    [2, "region 2"],
+    [3, "region 3"],
+    [4, "region 4"]
+]
+
+class Contacto(models.Model):
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    correo = models.EmailField()
+    region = models.TextField(choices=opciones)
+    avisos = models.BooleanField()
+
+    def __str__(self):
+        return self.nombre
