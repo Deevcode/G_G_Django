@@ -2,6 +2,7 @@ from operator import imod
 from unicodedata import name
 from django.shortcuts import render
 from .models import Producto
+from .forms import Contacto, ContactoForm
 
 # Create your views here.
 
@@ -20,4 +21,7 @@ def galeria(request):
 # VISTA DE CONTACTO HTML #
 
 def contacto(request):
-    return render(request, 'core/contacto.html')
+    data = {
+        'form' : ContactoForm()
+    }
+    return render(request, 'core/contacto.html', data)

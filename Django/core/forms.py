@@ -1,7 +1,7 @@
-from socket import fromshare
-from django import froms
+from django import forms
 from .models import Contacto
 
-class Meta:
-    model = Contacto
-    fields = '__all__'
+class ContactoForm(forms.ModelForm):
+    class Meta:
+        model = Contacto
+        fields = '__all__'
