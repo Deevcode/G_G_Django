@@ -1,8 +1,6 @@
-from operator import imod
-from unicodedata import name
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto
-from .forms import Contacto, ContactoForm , ProductoForm
+from .forms import  ContactoForm , ProductoForm
 
 # Create your views here.
 
@@ -17,6 +15,10 @@ def home (request):
 # VISTA DE GALERIA HTML #
 def galeria(request):
     return render(request, 'core/galeria.html') 
+
+# VISTA DE FUNDACION # 
+def fundacion_page(request):
+    return render(request, 'core/fundacion.html')  
 
 # VISTA DE CONTACTO HTML #
 def contacto(request):
@@ -51,9 +53,18 @@ def agregar_producto(request):
 
 # VISTA DE LISTAR PRODUCTO HTML #
 def listar_producto(request):
-    return render(request, 'core/productos/listar.html')
+    productos = Producto.objects.all()
 
-# VISTA DE FUNDACION # 
-def fundacion_page(request):
-    return render(request, 'core/fundacion.html')  
+    data = {
+        'productos' : productos
+    }
 
+    return render(request, 'core/productos/listar.html', data)
+
+# VISTA DE MODIFICAR HTML #
+def modificar_producto(request, id):
+    objeto = get_object_or_404(Producto, id=id)
+    data = {
+        'form': ProductoForm(instance=objeto)
+    }
+    return render(request, 'core/productos/modificar.html', data)
