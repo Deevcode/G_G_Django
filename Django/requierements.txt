@@ -1,4 +1,0 @@
-django == 4.0.4
-pillow
-django-admin-interface
-django-seed
