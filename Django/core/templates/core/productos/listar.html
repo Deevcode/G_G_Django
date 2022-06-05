@@ -4,6 +4,30 @@
 {% load static %}
 <!-- LLamo al bloque contenido insertado en [base.html] -->
 {% block contenido %}
-    <p> Hola </p>
+{% load humanize %}
+<br>
+<br>
+<div class="card">
+    <div class="card-body">
+        <h2>LISTADO DE PRODCUTOS</h2>
+        <hr>
+        <table class="table table-striped tabl-hover table-responsive-sm"> 
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Categoria</th>
+            </tr>
+
+            {% for p in productos %}
+            <tr>
+                <td>{{ p.nombre | title }}</td>
+                <td>${{ p.precio | intcomma }}</td>
+                <td>{{ p.marca | title }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+</div> 
 {% endblock %}
 <!-- FIN DEL BLOQUE -->
