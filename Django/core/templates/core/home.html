@@ -23,40 +23,38 @@
 
 <!-- LLamo al bloque contenido insertado en [base.html] -->
 {% block contenido %}
-             <div class="slider">
-                <div>
-                    <img src="{% static 'core/img/banner/banner1.png' %}" alt="">
-                </div>
-                <div>
-                    <img src="{% static 'core/img/banner/banner2.png' %}" alt="">
-                </div>
-                <div>
-                    <img src="{% static 'core/img/banner/banner3.png' %}" alt="">
-                </div>
+<div class="slider">
+    <div>
+        <img src="{% static 'core/img/banner/banner1.png' %}" alt="">
+    </div>
+    <div>
+        <img src="{% static 'core/img/banner/banner2.png' %}" alt="">
+    </div>
+    <div>
+        <img src="{% static 'core/img/banner/banner3.png' %}" alt="">
+    </div>
+</div>
+{% load humanize %}
+<center><h2>Productos</h2></center>
+
+<div class="productos">
+    <div class="producto">
+        {% for p in productos %}
+        <div class="contenedor_producto">
+            
+            {% if p.imagen %}
+            <img src="{{ p.imagen.url }}" alt="imagen producto">
+            {% endif %}
+            <div class="detalle">
+                <h5>{{p.marca | capfirst}}</h5>
+                <h2>{{p.nombre | title }}</h2>
+                <h3>${{p.precio | intcomma }}</h3>
             </div>
-        {% load humanize %}
-        <center><h2>Productos</h2></center>
-        
-        <div class="productos">
-
-            <div class="producto">
-                {% for p in productos %}
-                <div class="contenedor_producto">
-                    {% if p.imagen %}
-                    <img src="{{ p.imagen.url }}" alt="imagen producto">
-                    {% endif %}
-                    <div class="detalle">
-                        <h5>{{p.marca | capfirst}}</h5>
-                        <h2>{{p.nombre | title }}</h2>
-                        <h3>${{p.precio | intcomma }}</h3>
-                    </div>
-
-                </div>
-
-            </div>
-            {% endfor %}
-          
+            
         </div>
+        {% endfor %}
+    </div>      
+</div>
 
 {% endblock %}
 <!-- FIN DEL BLOQUE -->

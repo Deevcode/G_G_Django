@@ -78,6 +78,7 @@ nav a {
 
 /*CONTENIDO PRINCIPAL*/
 
+
 #contenido {
     width: 80%;
     margin:auto;
@@ -105,11 +106,7 @@ nav a {
     padding: 5px;
 }
 
-.producto .contenedor_producto {
-    background-color: white;
-    width: 80%;
-    margin: auto;
-}
+
 
 /*FOOTER*/
 
@@ -266,3 +263,9 @@ textarea {
 
 }
 
+.producto .contenedor_producto {
+    display: inline-block;
+    background-color: white;
+    width: 80%;
+    margin: solid;
+}
