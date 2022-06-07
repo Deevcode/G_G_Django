@@ -2,9 +2,14 @@ from email import message
 import re
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto
+<<<<<<< HEAD
 from .forms import  ContactoForm, CustomUserCreationForm , ProductoForm , UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+=======
+from .forms import  ContactoForm , ProductoForm
+from django.contrib import messages
+>>>>>>> ramaD
 
 # Create your views here.
 
@@ -87,6 +92,7 @@ def eliminar_producto(request, id):
     producto = get_object_or_404(Producto, id=id)
     producto.delete()
     messages.success(request, "Eliminado Correctamente")
+<<<<<<< HEAD
     return redirect(to="listar_producto")
 
 # VISTA DE ELIMINAR HTML #
@@ -107,3 +113,6 @@ def  registro(request):
         data['form'] = formulario    
 
     return render(request, 'registration/registro.html', data)
+=======
+    return redirect(to="listar_producto")
+>>>>>>> ramaD

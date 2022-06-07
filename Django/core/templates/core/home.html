@@ -25,6 +25,7 @@
 {% block contenido %}
 <div class="slider">
     <div>
+<<<<<<< HEAD
         <img src="{% static 'core/img/banner/banner1.png' %}" alt="">
     </div>
     <div>
@@ -32,6 +33,15 @@
     </div>
     <div>
         <img src="{% static 'core/img/banner/banner3.png' %}" alt="">
+=======
+        <img src="{% static 'core/img/banner/bannerazdon.png' %}" alt="">
+    </div>
+    <div>
+        <img src="{% static 'core/img/banner/bannerpala.png' %}" alt="">
+    </div>
+    <div>
+        <img src="{% static 'core/img/banner/bannerrastrillo.png' %}" alt="">
+>>>>>>> ramaD
     </div>
 </div>
 {% load humanize %}
@@ -46,7 +56,11 @@
             <img src="{{ p.imagen.url }}" alt="imagen producto">
             {% endif %}
             <div class="detalle">
+<<<<<<< HEAD
                 <h5>{{p.categoria | capfirst}}</h5>
+=======
+                <h5>{{p.marca | capfirst}}</h5>
+>>>>>>> ramaD
                 <h2>{{p.nombre | title }}</h2>
                 <h3>${{p.precio | intcomma }}</h3>
             </div>

@@ -65,9 +65,12 @@
                             <li>
                                 <a class="nav-link" href="{% url 'login' %}" >Iniciar sesion</a>
                             </li>
+<<<<<<< HEAD
                             <li>
                                 <a class="nav-link" href="{% url 'registro' %}" >Registrate</a>
                             </li>
+=======
+>>>>>>> ramaD
                             {% endif %}
 
                         </li>
@@ -92,17 +95,57 @@
     </div>
 
 
-    <footer>
+    <footer >
         <div class="marcas">
-            <img src="{% static 'core/img/footer/apple.png' %}" alt="apple">
-            <img src="{% static 'core/img/footer/lenovo.png' %}" alt="lenovo">
-            <img src="{% static 'core/img/footer/microsoft.png' %}" alt="microsoft">
-            <img src="{% static 'core/img/footer/samsung.png' %}" alt="samsung">
-            <img src="{% static 'core/img/footer/xiaomi.png' %}" alt="xiaomi">
+            <img src="{% static 'core/img/footer/Youtube.png' %}" alt="apple">
+            <img src="{% static 'core/img/footer/instagram.png' %}" alt="lenovo">
+            <img src="{% static 'core/img/footer/facebook.png' %}" alt="microsoft">
+            <img src="{% static 'core/img/footer/telegrama.png' %}" alt="samsung">
+            <img src="{% static 'core/img/footer/whatsapp.png' %}" alt="xiaomi">
         </div>
-        <div class="logo_footer">
-            <img src="{% static 'core/img/logo.png' %}" alt="logo">
+        <div class="footer-distributed" class="container-xxl">
+
+            <div class="footer-left">
+                <h3>Getto<span>Garden</span></h3>
+    
+                <p class="footer-links">
+                    <a href="{% url 'contacto' %}">Contacto </a>
+                    |
+                    <a href="{% url 'fundacion' %}">Fundacion</a>
+                    |
+                    <a href="{% url 'galeria' %}">Galeria</a>
+                    |
+                    <a href="{% url 'login' %}">Iniciar sesion</a>
+                </p>
+    
+                <p class="footer-company-name">Copyright © 2022 <strong>Getto Garden</strong> All rights reserved</p>
+            </div>
+    
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>frutiloop</span>
+                        Nso</p>
+                </div>
+    
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+56 74233445</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mo.ruasda@duocuc.cl">xyz@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span>Sobre  Nuestra Compania</span>
+                    <strong>Getto Garden</strong> Empresa dedicada a la venta de producrtos de jardinaeria y con asintencia al clinte en todo momoneto de la jornada laboral
+                </p>
+
+            </div>
         </div>
+      
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -128,5 +171,8 @@
    
     {% block js %}
     {% endblock %}
+
+
+
 </body>
 </html>
