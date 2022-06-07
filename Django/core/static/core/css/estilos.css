@@ -5,9 +5,9 @@
 }
 
 body {
-
-    background-size: cover;
-    background-image: url(https://c.wallhere.com/photos/d9/e3/abstraction_petals_lines_patterns-584954.jpg!d);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-image: url(abstraction_petals_lines_patterns-584954.jpg);
     background-color:#EDF2F7;
     font-family: 'Open Sans', sans-serif;
 }
