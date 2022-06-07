@@ -46,7 +46,7 @@
             <img src="{{ p.imagen.url }}" alt="imagen producto">
             {% endif %}
             <div class="detalle">
-                <h5>{{p.marca | capfirst}}</h5>
+                <h5>{{p.categoria | capfirst}}</h5>
                 <h2>{{p.nombre | title }}</h2>
                 <h3>${{p.precio | intcomma }}</h3>
             </div>
