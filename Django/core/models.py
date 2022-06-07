@@ -12,10 +12,11 @@ class Categoria(models.Model):
 # Modelo para el producto.
 
 class Producto(models.Model):
+    id = models.CharField(primary_key=True, max_length=6)
     nombre = models.CharField(max_length=50)
     precio = models.IntegerField()
     descripcion = models.TextField()
-    marca = models.ForeignKey(Categoria, on_delete=models.PROTECT)
+    categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
     fecha_publicacion = models.DateField()
   
     imagen = models.ImageField(upload_to="productos", null=True)

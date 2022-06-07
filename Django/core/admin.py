@@ -3,7 +3,7 @@ from .models import Categoria, Producto , Contacto
 # Register your models here.
 
 class ProductoAdmin(admin.ModelAdmin):
-    list_display = ["nombre", "precio", "marca", "imagen"]
+    list_display = ["nombre", "precio", "categoria", "imagen"]
     list_editable = ["precio"]
     search_fields = ["nombre"]
     
