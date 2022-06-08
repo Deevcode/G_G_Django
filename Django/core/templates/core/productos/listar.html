@@ -18,7 +18,7 @@
             })
             .then(function(result) {
                 if(result.isConfirmed) {
-                    window.location.href = "/eliminar_producto/"+id+"/"
+                    window.location.href = "/eliminar-producto/"+id+"/"
                 }
             })
         }
@@ -50,7 +50,7 @@
                 <td>{{ p.categoria | title }}</td>
                 <td>
                     <a href="{% url 'modificar_producto' p.id %}" class="btn btn-info btn-sm">Modificar</a>
-                    <a href="#" onclick="eliminarProducto({{p.id}})" class="btn btn-danger btn-sm">Eliminar</a>
+                    <a onclick="eliminarProducto({{p.id}})" class="btn btn-danger btn-sm">Eliminar</a>
                 </td>
             </tr>
             {% endfor %}
