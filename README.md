@@ -17,7 +17,7 @@ Proyecto Guetto Garden integrado con Django y Oracle.
 2.2 En caso de tener creado el usario eliminarlo.
 
 
-[  drop user c##prueba CASCADE;  ]
+               [  drop user c##prueba CASCADE;  ]
 
 
 2.3 Crear el usuario
