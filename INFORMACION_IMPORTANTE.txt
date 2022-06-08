@@ -1,0 +1,10 @@
+
+---------------------------------------------------------------
+|    RAMAS DE TRABAJO                                         |
+|    1. main (solo hacer merge desde esta rama)               |
+|    2. ramaA (Jose Cornejo)                                  |
+|    2. ramaB (Moises Rubio)                                  |
+|    3. ramaC (Patricio Godoy)                        	      |
+---------------------------------------------------------------
+
+Documentar todo en sus Respectivos Read Me.
