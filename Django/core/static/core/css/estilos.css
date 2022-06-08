@@ -4,10 +4,11 @@
 }
 
 body {
+    background-image: center;
     background-repeat: no-repeat;
-    background-size: auto;
-    background-image: url(abstraction_petals_lines_patterns-584954.jpg);
-    background-color:#EDF2F7;
+    background-size: cover;
+    background-image: url(wallpaper.jpg);
+    background-color:#636363;
     font-family: 'Open Sans', sans-serif;
 }
 
