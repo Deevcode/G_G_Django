@@ -92,8 +92,20 @@ WSGI_APPLICATION = 'Jordaan23.wsgi.application'
 
 DATABASES = {
     'default': {
+<<<<<<< HEAD:Tienda/Jordaan23/Jordaan23/settings.py
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.Jordaan23',
+=======
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': '127.0.0.1:1521/xe',
+        'USER': 'c##prueba',
+        'PASSWORD': '1234',
+        'TEST': {
+            'USER': 'default_test',
+            'TBLSPACE': 'default_test_tbls',
+            'TBLSPACE_TEMP': 'default_test_tbls_temp',
+        }
+>>>>>>> 2e50d59d1e4c4a4017646020a29237cb2adba479:Django/Django/settings.py
     }
 }
 

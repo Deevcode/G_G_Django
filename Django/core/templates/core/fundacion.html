@@ -1,0 +1,109 @@
+<!-- Exporta el templates de [base.html] -->
+{% extends 'core/base.html' %}
+<!-- Carga carpeta static para JS CSS y IMG -->
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+{% endblock %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+{% endblock %}
+
+<!-- LLamo al bloque contenido insertado en [base.html] -->
+{% block contenido %}
+    <body>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item"style="background-color: #5AE0C6; >
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                FUNDACION ABRAZAME
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong></strong> Ayúdanos a llegar a todas las residencias de niños, niñas y adolescentes. Nosotros nos encargaremos de entregarles apoyo, contención y nuevas oportunidades
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" style="background-color: #5AE0C6; >
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                ¿QUIENES SOMOS?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong></strong> Fundación Abrázame busca generar puentes para el desarrollo integral e inclusión de los niños, niñas y adolescentes en situación de vulnerabilidad en Chile. Aquí nos reunimos quienes queremos crear un marco de protección y desarrollo para las nuevas generaciones.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" style="background-color: #5AE0C6;>
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                AMOR POR LOS NIÑOS
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>.</strong> «Todo niño tiene derecho a las medidas de protección que su condición de menor requiere por parte de su familia, de la sociedad y del estado.» Convención Americana de Derechos Humanos, art. 19.
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="card-group">
+            <div class="card"style="background-color: #FDC7FA;">
+              <div class="card-body">
+                <center><h5 class="card-title">+30</h5></center>
+                <p class="card-text">FAMILIAS ORIENTADAS EN TEMAS PSICOSOCIALES</p>
+                <p class="card-text"><small class="text-muted"></small></p>
+              </div>
+            </div>
+            <div class="card"style="background-color: #FDC7FA;">
+              <div class="card-body">
+                <center><h5 class="card-title">+1.000</h5></center>
+                <p class="card-text">FAMILIAS APOYADAS CON ALIMENTOS Y OTROS INSUMOS</p>
+                <p class="card-text"><small class="text-muted"></small></p>
+              </div>
+            </div>
+            <div class="card"style="background-color: #FDC7FA;">
+              <div class="card-body">
+                <center><h5 class="card-title">+150</h5></center>
+                <p class="card-text">COLABORADORES EQUIPO ABRÁZAME</p>
+                <p class="card-text"><small class="text-muted"></small></p>
+              </div>
+            </div>
+            <div class="card" style="background-color: #FDC7FA;">
+                <div class="card-body">
+                  <center><h5 class="card-title">+1.000</h5></center>
+                  <p class="card-text">NIÑOS, NIÑAS Y ADOLESCENTES BENEFICIADOS</p>
+                  <p class="card-text"><small class="text-muted"></small></p>
+                </div>
+              </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div>
+            <img src="{% static 'core/img/banner/banner fundacion.png' %}" alt="">
+        </div>
+          <div class="container-fluid" style="background-color: #C18BBD;" >
+            <br>
+            <br>
+              <div class="text-center">
+                <h3>ESTAMOS DEDICADOS A PROTEGER A LOS NIÑOS, NIÑAS Y ADOLESCENTES RESIDENTES EN HOGARES.</h3>
+              </div>
+            <br>
+            <div class="text-center">
+            <p>Fundación Abrázame se ha financiado principalmente con donaciones de personas naturales, por lo tanto, la transparencia es un principio esencial para entregar la confianza en nuestros proyectos y acciones y así demostrar nuestras capacidades para gestionar los fondos que recibimos y reinvertirlos de manera eficaz y duradera en nuestras actividades.   </p>
+            <p>Nuestra Fundación inició sus actividades el 8 de junio de 1934, como respuesta a las apremiantes necesidades originadas por la crisis económica de los años treinta, y que se tradujeron en un gran aumento de la vagancia y mendicidad infantiles. Su creación fue propuesta por un grupo de personalidades encabezadas por don Francisco Huneeus Gana, al entonces Presidente de la República, don Arturo Alessandri Palma.</p>
+            <p>A partir de 1935 y acorde a los requerimientos de la infancia de la época, comenzó a extenderse a otros puntos del país y a ejecutar diversos programas, entre los que destacan los Centros de Atención Diurna que acogían a hijos de madres trabajadoras, brindándoles asistencia médica, psicológica y pedagógica, alimentación y recreación. También desarrolló prestaciones anexas como un sanatorio para niños tuberculosos y un servicio jurídico para atender causas civiles de menores (que en 1983 se constituyó como organismo independiente).</p>
+            <br>
+            <br>
+            </div>
+          </div>
+{% endblock %}
+<!-- FIN DEL BLOQUE -->

@@ -52,11 +52,15 @@
                     <!--VALIDA SI EL USUARIO INGRESADO TIENE PERMISOS PARA MODIFICAR LOS PRODUCTOS-->
                     {% if perms.core.change_producto %}
                     <a href="{% url 'modificar_producto' p.id %}" class="btn btn-info btn-sm">Modificar</a>
+<<<<<<< HEAD:Tienda/Jordaan23/app/templates/app/productos/listar.html
                     {% endif %}
                     <!--VALIDA SI EL USUARIO INGRESADO TIENE PERMISOS PARA ELIMINAR LOS PRODUCTOS-->
                     {% if perms.core.delete_producto %}
                     <a onclick="eliminarProducto({{p.id}})" class="btn btn-danger btn-sm">Eliminar</a>
                     {% endif %}
+=======
+                    <a onclick="eliminarProducto({{p.id}})" class="btn btn-danger btn-sm">Eliminar</a>
+>>>>>>> 2e50d59d1e4c4a4017646020a29237cb2adba479:Django/core/templates/core/productos/listar.html
                 </td>
             </tr>
             {% endfor %}
