@@ -1,0 +1,37 @@
+<!-- Exporta el templates de [base.html] -->
+{% extends 'app/base.html' %}
+<!-- Carga carpeta static para JS CSS y IMG -->
+{% load static %}
+<!-- LLamo al bloque contenido insertado en [base.html] -->
+{% block contenido %}
+{% load crispy_forms_tags %}
+<br>
+<br>
+
+<div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h2>Nuevo Producto</h2>
+                <form method="post" enctype="multipart/form-data" >
+
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    
+                    <div class ="d-flex justify-content-end">
+                        <input type="submit" value="Guardar" class="btn btn-primary">
+                        &nbsp;
+                        <input type="reset" value="Cancelar" class="btn btn-secondary">
+                    </div>
+            
+                </form>
+                {{mensaje}}
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</div>
+
+{% endblock %}
+<!-- FIN DEL BLOQUE -->

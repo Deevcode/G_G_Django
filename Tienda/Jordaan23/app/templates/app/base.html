@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>Guetto Garden</title>
+    <!--Exportando bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+    {% load static %}
+    {% block css %}
+    {% endblock %}  
+    <link rel="stylesheet" href="{% static 'app/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}">
+    
+</head>
+<body> 
+    <div class="container-fluid">
+    <!-- BARRA NAVEGACIÓN -->
+            <nav class="navbar navbar-expand-md navbar-light border-3 border-bottom border-primary">
+                <div class="container-fluid">
+                    <a href="{% url 'home' %}" class="navbar-brand"><img  class="logo"  src="{% static 'core/img/logo.png' %}" alt="logo"></a>
+                    <button type="button"
+                        class="navbar-toggler"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#MenuNavegacion">
+                            <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div id="MenuNavegacion" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-3">
+                        <li class="nav-item" >
+                            <a class="nav-link" href="{% url 'home' %}"> Inicio </a>
+                        </li>
+                        <li class="nav-item" >
+                            <a class="nav-link" href="{% url 'contacto' %}"> Contacto </a>
+                        </li>
+                        <li class="nav-item" >
+                            <a class="nav-link" href="{% url 'tienda' %}"> tienda </a>
+                        </li>
+                        <!--
+                        <li class="nav-item" >
+                            <a class="nav-link" href="{% url 'galeria' %}"> Galeria </a>
+                        </li>
+                        -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Productos
+                            </a>
+                            <ul class="dropdown-menu">
+                            <!--VALIDA SI EL USUARIO INGRESADO TIENE PERMISOS PARA AGREGAR PRODUCTOS-->
+                            {% if perms.app.add_producto %}
+                            <li><a class="dropdown-item" href="{% url 'agregar_producto' %}">Agregar</a></li>
+                            {% endif %}
+                            <!--VALIDA SI EL USUARIO INGRESADO TIENE PERMISOS PARA LISTAR LOS PRODUCTOS-->
+                            {% if perms.app.view_producto %}
+                            <li><a class="dropdown-item" href="{% url 'listar_producto' %}">Listar</a></li>
+                            {% endif %}
+                            </ul>
+                        </li>
+                        <!--NAVEGADORES-->
+                        <li class="nav-item" >
+                            {% if user.is_authenticated %}
+                            <li>
+                                <a class="nav-link" href="{% url 'logout' %}" >Cerrar sesion</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#">@{{ user.username }}</a>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a class="nav-link" href="{% url 'login' %}" >Iniciar sesion</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{% url 'registro' %}" >Registrate</a>
+                            </li>
+                            {% endif %}
+
+                        </li>
+                    </ul>
+                    <!--
+                    <ul class="navbar-nav ms-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-nowrap" href="#">Iniciar sesión</a>
+                        </li>
+                    </ul>   
+                    -->
+                </div>
+            </nav>
+        <!-- FIN BARRA NAVEGACIÓN -->
+
+
+    <!--CONTENIDO HERABLE-->
+    <div id="contenido">
+        {% block contenido %}
+
+        {% endblock %}
+    </div>
+    <!--FIN CONTENIDO HEREDABLE-->
+    <br>
+    <hr>
+    <!-- INICIO FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h6>About</h6>
+              <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Categories</h6>
+              <ul class="footer-links">
+                <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+                <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+                <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+                <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+                <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+                <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+              </ul>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Quick Links</h6>
+              <ul class="footer-links">
+                <li><a href="http://scanfcode.com/about/">About Us</a></li>
+                <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+                <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+           <a href="#">Scanfcode</a>.
+              </p>
+            </div>
+  
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <ul class="social-icons">
+                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+              </ul>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <!--FIN DEL FOOTER-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    
+    <script src="{% static 'app/js/menu.js' %}"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {% if messages %}
+        {% for m in messages %}
+            <script>
+                Swal.fire({
+                    "tittle": "Felicitaciones",
+                    "text": "{{m}}",
+                    "icon": "success"
+                })
+            </script>
+        {% endfor %}
+    {% endif %}
+
+
+   
+    {% block js %}
+    {% endblock %}
+</body>
+</html>
