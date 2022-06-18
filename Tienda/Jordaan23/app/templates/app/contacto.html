@@ -1,0 +1,40 @@
+<!-- Exporta el templates de [base.html] -->
+{% extends 'app/base.html' %}
+<!-- Carga carpeta static para JS CSS y IMG -->
+{% load static %}
+<!-- LLamo al bloque contenido insertado en [base.html] -->
+{% block contenido %}
+{% load crispy_forms_tags %}
+<br>
+<br>
+<div class="row" >
+    <div class="col-12 col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h2>Contactanos!</h2>
+                <form action="" class="" method="POST">
+                    <!--IMPORTA EL FORMULARIO DE CONTACTO (MODEL)-->
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <br>
+                    <div class="d-flex justify-content-end" >
+                        <button type="submit" id="btnEnviar" class="btn btn-primary">Enviar</button>
+                        &nbsp;
+                        <button type="reset" value="Cancelar" class="btn btn-secondary">Cancelar</button>
+                    </div>
+                </form>
+                <!--FUNCION DECLARADA EN BASE-->
+                {{mensaje}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<table id="tablacontactos">
+    
+</table>
+
+{% endblock %}
+<!-- FIN DEL BLOQUE -->
