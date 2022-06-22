@@ -1,6 +1,7 @@
 from django.urls import path, include
-from .views import extra_page, galeria, home , contacto , agregar_producto, listar_producto, modificar_producto, eliminar_producto, registro, politicas , ProductoViewset, CategoriaViewset
+from .views import CategoriaList, extra_page, galeria, home , contacto , agregar_producto, listar_producto, modificar_producto, eliminar_producto, registro, politicas , ProductoViewset, CategoriaViewset
 from rest_framework import routers
+from . import views
 
 #ROUTERS PARA GENERAR API
 router = routers.DefaultRouter()
@@ -19,5 +20,10 @@ urlpatterns = [
     path('eliminar-producto/<id>/', eliminar_producto, name="eliminar_producto"),
     path('registro/', registro, name="registro"),
     path('api/', include(router.urls) ),
-    path('politicas/', politicas, name="politicas")
+    path('politicas/', politicas, name="politicas"),
+    path('categoria-list/', CategoriaList.as_view(), name="categoria_list"),
 ]
+
+login = router.urls
+
+login += path('login', views.login ),

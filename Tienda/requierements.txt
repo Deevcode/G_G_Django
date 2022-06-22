@@ -6,3 +6,4 @@ django-crispy-forms
 cx_oracle
 django-rest-framework
 django-pwa
+httpie

@@ -50,7 +50,18 @@ INSTALLED_APPS = [
     'crispy_forms',
     'rest_framework',
     'pwa',
+    'rest_framework.authtoken',
 ]
+#VALIDACION EN EL API VIEWS
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -96,6 +107,21 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.Jordaan23',
     }
 }
+#   COMENTAR LA CONEXION A BASE DE DATOS SQLITE 
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.oracle',
+#        'NAME': '127.0.0.1:1521/orcl',
+#        'USER': 'c##prueba',
+#        'PASSWORD': 'prueba',
+#        'TEST': {
+#            'USER': 'default_test',
+#            'TBLSPACE': 'default_test_tbls',
+#            'TBLSPACE_TEMP': 'default_test_tbls_temp',
+#        }
+#    }
+#}
 
 
 # Password validation

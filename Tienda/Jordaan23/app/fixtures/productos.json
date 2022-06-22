@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "nombre_categoria": "Plantas",
+        "categoria": {
+            "id": 1,
+            "nombre": "Plantas"
+        },
+        "categoria_id": 1,
+        "nombre": "jose",
+        "precio": 20000,
+        "descripcion": "juan",
+        "fecha_publicacion": "2022-06-12",
+        "imagen": "http://127.0.0.1:8000/media/productos/tierra.png"
+    }
+]

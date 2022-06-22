@@ -2,15 +2,14 @@ from distutils.command.upload import upload
 from pyexpat import model
 from django.db import models
 
-# Modelo para la categoria.
+# MODELO PARA CATEGORIA DEL PRODUCTO.
 class Categoria(models.Model):
     nombre = models.CharField(max_length=50)
 
     def __str__(self):
         return self.nombre
 
-# Modelo para el producto.
-
+# MODELO DE PRODUCTO.(TIENE HERENCIA DE CLASE PRODUCTO)
 class Producto(models.Model):
     id = models.CharField(primary_key=True, max_length=6)
     nombre = models.CharField(max_length=50)
@@ -24,7 +23,7 @@ class Producto(models.Model):
     def __str__(self):
         return self.nombre
 
-# Selector de la clase Modelo
+# SELECTOR DEL MODELO DE CONTACTO
 opciones = [
     [0, "Seleccione Region"],
     [1, "region 1"],
@@ -32,7 +31,7 @@ opciones = [
     [3, "region 3"],
     [4, "region 4"]
 ]
-# Modelo para el contacto
+# MODELO DE CONTACTO
 class Contacto(models.Model):
     name = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)

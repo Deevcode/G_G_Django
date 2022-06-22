@@ -1,27 +1,96 @@
 from email import message
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import never_cache
+from django.views.decorators.csrf import csrf_protect
+
+
 from .models import Producto, Categoria
 from .forms import  ContactoForm, CustomUserCreationForm , ProductoForm , UserCreationForm
-from django.contrib import messages
-from django.core.paginator import Paginator
-from django.http import Http404
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import login_required, permission_required
-from rest_framework import viewsets
+
 from .serializers import ProductoSerializer, CategoriaSerializar
 
+from django.core.paginator import Paginator
+from django.http import Http404, HttpResponseRedirect
+
+#IMPORTACIONES DE DJANGO CONTRIB
+from django.views.generic.edit import FormView
+from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.forms import AuthenticationForm
+
+#IMPORTACIONES DE REST FRAMEWORK
+from rest_framework.response import Response
+from rest_framework.exceptions import ParseError
+from rest_framework import generics
+from rest_framework import status
+from rest_framework.authtoken.models import Token
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.views import APIView
+from rest_framework import viewsets
+
+
+
 # Create your views here.
+
+#----------------------------------------------  SERIALIZER (JSON)   ----------------------------------------------
+
+
+#-------------------------------------  ACCESO A LOGIN DE LAS APIS (JSON)   ----------------------------------------
+class Login(FormView):
+    template_name = "access.html"
+    form_class = AuthenticationForm
+    success_url = reverse_lazy('api:categoria_list')
+
+    @method_decorator(csrf_protect)
+    @method_decorator(never_cache)
+    def dispatch(self,request,*args,**kwargs):
+        if request.user.is_authenticated:
+            return HttpResponseRedirect(self.get_success_url())
+        else:
+            return super(Login,self).dispatch(request,*args,*kwargs)
+
+    def form_valid(self,form):
+        user = authenticate(username = form.cleaned_data['username'], password = form.cleaned_data['password'])
+        token,_ = Token.objects.get_or_create(user = user)
+        if token:
+            login(self.request, form.get_user())
+            return super(Login,self).form_valid(form)
+
+class Logout(APIView):
+    def get(self,request, format = None):
+        request.user.auth_token.delete()
+        logout(request)
+        return Response(status = status.HTTP_200_OK)
+#------------------------------------------------------------------------------------------------------------------
+
+
 
 #----------------------------------------------  SERIALIZER (JSON)   ----------------------------------------------
 #SERIALIZADOR PARA CONVERTIR LOS PRODUCTOS A JSON [ 127.0.0.1:8000/api/categoria/1/  (id)]
 class CategoriaViewset(viewsets.ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializar
+    permission_classes = (IsAuthenticated,)
+    authentication_class = (TokenAuthentication,)
+
+class CategoriaList(generics.ListCreateAPIView):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializar
+    permission_classes = (IsAuthenticated,)
+    authentication_class = (TokenAuthentication,)
 
 #SERIALIZADOR PARA CONVERTIR LOS PRODUCTOS A JSON [ 127.0.0.1:8000/api/producto/1/  (id)]
 class ProductoViewset(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
+    permission_classes = (IsAuthenticated,)
+    authentication_class = (TokenAuthentication,)
     
     #BUSCAR PRODUCTO POR NOMBRE DESDE EL SERIALIZER EN JSON  [ 127.0.0.1:8000/api/producto/?nombre=pala  (nombre)]
     def get_queryset(self):
@@ -31,28 +100,29 @@ class ProductoViewset(viewsets.ModelViewSet):
         if nombre:
             productos = productos.filter(nombre__contains=nombre) # CONTAINS ES LO MISMO QUE EL 'LIKE' EN BASE DE DATOS
         return productos    
-#-------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------
 
 #------------------------------------------|
 # VERIFICAR LOGIN PARA ACCEDER A LA PAGINA |
 #@login_required                           |
 #------------------------------------------|
-
+#-------------------------------------------  VISTAS  ---------------------------------------------------------------
 # VISTA DE HOME HTML #
 def home (request):
-    productos = Producto.objects.all()
-    data = {
-        'entity' : productos
-    }
-    return render(request, 'app/home.html', data)
+    return render(request, 'app/home.html')
 
 # VISTA DE GALERIA HTML #
 def galeria(request):
     return render(request, 'app/galeria.html') 
 
-# VISTA DE FUNDACION # 
+@login_required
+# VISTA DE TIENDA # 
 def extra_page(request):
-    return render(request, 'app/tienda.html')  
+    productos = Producto.objects.all()
+    data = {
+        'entity' : productos
+    }
+    return render(request, 'app/tienda.html', data)  
 
 # VISTA DE CONTACTO HTML #
 def contacto(request):
@@ -68,7 +138,9 @@ def contacto(request):
         else:
             data["form"]  = formulario  
     return render(request, 'app/contacto.html', data)
+#-------------------------------------------------------------------------------------------------------------------
 
+#--------------------------------------------- VISTAS CON PERMISOS -----------------------------------------------
 # PERMISO PARA AGREGAR PRODUCTO
 @permission_required('app.add_producto')
 # VISTA DE AGREGAR PRODUCTO HTML #
@@ -136,7 +208,7 @@ def eliminar_producto(request, id):
     messages.success(request, "Eliminado Correctamente")
     return redirect(to="listar_producto")
 
-#VISTA DE POLITICAS PARA FACEBOOK
+#VISTA DE POLITICAS
 def politicas(request):
     return render(request, 'app/politicas.html')
 
@@ -158,3 +230,4 @@ def  registro(request):
         data['form'] = formulario    
 
     return render(request, 'registration/registro.html', data)
+#-------------------------------------------------------------------------------------------------------------------    
