@@ -1,4 +1,4 @@
-django == 4.0.4
+django 
 pillow
 django-admin-interface
 django-seed

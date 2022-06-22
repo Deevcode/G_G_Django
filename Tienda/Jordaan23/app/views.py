@@ -43,7 +43,7 @@ from rest_framework import viewsets
 
 #-------------------------------------  ACCESO A LOGIN DE LAS APIS (JSON)   ----------------------------------------
 class Login(FormView):
-    template_name = "access.html"
+    template_name = "login.html"
     form_class = AuthenticationForm
     success_url = reverse_lazy('api:categoria_list')
 
