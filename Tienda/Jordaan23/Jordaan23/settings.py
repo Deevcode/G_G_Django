@@ -101,27 +101,27 @@ WSGI_APPLICATION = 'Jordaan23.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.Jordaan23',
-    }
-}
-#   COMENTAR LA CONEXION A BASE DE DATOS SQLITE 
-
 #DATABASES = {
 #    'default': {
-#        'ENGINE': 'django.db.backends.oracle',
-#        'NAME': '127.0.0.1:1521/orcl',
-#        'USER': 'c##prueba',
-#        'PASSWORD': 'prueba',
-#        'TEST': {
-#            'USER': 'default_test',
-#            'TBLSPACE': 'default_test_tbls',
-#            'TBLSPACE_TEMP': 'default_test_tbls_temp',
-#        }
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.Jordaan23',
 #    }
 #}
+#   COMENTAR LA CONEXION A BASE DE DATOS SQLITE 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': '127.0.0.1:1521/xe',
+        'USER': 'c##tienda',
+        'PASSWORD': 'tienda',
+        'TEST': {
+            'USER': 'default_test',
+            'TBLSPACE': 'default_test_tbls',
+            'TBLSPACE_TEMP': 'default_test_tbls_temp',
+        }
+    }
+}
 
 
 # Password validation
