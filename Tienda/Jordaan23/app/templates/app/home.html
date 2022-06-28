@@ -14,29 +14,134 @@
 
 <!-- LLamo al bloque contenido insertado en [base.html] -->
 {% block contenido %}
+<!--INICIO CARRUSEL-->
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+<br>
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <center><img src="{% static 'app/img/tienda/jardin1.jpg' %}" class="rounded carrusel mx-auto"></center>
+        
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>@Jose.</h1>
+            <h4>"...con la ayuda de Guetto Garden fui capaz de montar mi propio negocio".</h4>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <center><img src="{% static 'app/img/tienda/jardin2.jpg' %}" class="rounded carrusel mx-auto"></center>
 
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>@Moises.</h1>
+            <h4>"...esta comunidad ayudo mis tecnicas de cultivo y produccion en flores."</h4>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <center><img src="{% static 'app/img/tienda/jardin3.jpg' %}" class="rounded carrusel mx-auto"></center>
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>@Daniela.</h1>
+            <h4>"...sin duda esta iniciativa nos llevara lejos en nuestro proyecto."</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!--FIN CARRUSEL-->
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+<!--INICIO BENEFICIOS-->
 <br>
 <div class="card" >
     <div class="card-body">
         <div class="container-fluid">
-            <h2>Jardines Destacados del mes</h2>
-            <p>Destacamos los jardines mas verdes del verano, cada seleccionado recivira un premio de nuestra tienda, valoramos el cariño a nuestra comunidad</p>
+            <center>
+                <h1>Miembros Guetto Garden</h1>
+            </center>
+            <br>
+            <center>
+                <h4>¡Se parte de nuestra comunidad.</h4>
+                <br>
+                <h5>Te invitamos a ser parte del movimiento Guetto Garden, junto a ello podras acceder a productos que son indispensables para tu jardin, ademas podras realizar la venta de tus productos cultivados en el huerto de tu hogar. Contamos con concursos mensuales a nuestros seguidores mas activos promoviendo el cultivo consiente, libre de parabenos y pesticidaz.</h5>
+            </center>
+            
         </div>
+        <br>
+        <center><a href="{% url 'registro' %}"><button type="button" class="btn btn-info btn-lg boto">Registrate</button></a></center>
+        <hr>
+        <br>
+        <br>
+        <center>
+            <h1>Beneficios Asociados</h1>
+        </center>
+        <br>
+        <br>
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h3>col-md-6</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, numquam facere! Pariatur aspernatur veritatis, totam nulla ad suscipit, dolores sunt nostrum facere nemo numquam repellat quod eaque similique quam vero.</p>
+                    <center>
+                        <h2>Premios</h2>
+                        <img src="{% static 'app/img/tienda/gift-card.png' %}" class="logo">
+                        <br>
+                        <p>Con tan solo tener registrado tu codigo automaticante estan participando por los premios que regalamos a nuestros usuarios de forma mensual, atento a tu correo o bandeja de entrada en tu perfil.</p>
+                    </center>
+                    
                 </div>
                 <div class="col-md-6">
-                    <h2>col-md-6</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, numquam facere! Pariatur aspernatur veritatis, totam nulla ad suscipit, dolores sunt nostrum facere nemo numquam repellat quod eaque similique quam vero.</p>
+                    <center>
+                        <h2>Ofertas</h2>
+                        <img src="{% static 'app/img/tienda/coupon.png' %}" class="logo">
+                        <br>
+                        <p>Otorgamos ofertas unicas aquellos clientes que frecuentan nuestro sitio web, comparte ofertas para nuevas recompensas "sujeto a disponibilidad".</p>
+                    </center>
+                   
                 </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <center>
+                        <h2>Tienda</h2>
+                        <img src="{% static 'app/img/tienda/store.png' %}" class="logo">
+                        <br>
+                        <p>Registrate con tus datos y accede a nuestra tienda, la cual cuenta con productos para tu jardin, ademas de todas las herramientas que hemos agregado recientemente.</p>
+                    </center>
+                    
+                </div>
+                <div class="col-md-6">
+                    <center>
+                        <h2>Charlas</h2>
+                        <img src="{% static 'app/img/tienda/conversation.png' %}" class="logo">
+                        <br>
+                        <p>Ofrecemos asesoria a nuestros usuarios, programamos charlas en terreno y de manera remota para resolver dudas de cultivo o nuevas practicas adquiridas para transmitir conocimiento entre vecinos.</p>
+                    </center>
+                    
+                </div>
+                <hr>
             </div>
         </div>
     </div>
 </div>
-
+<!--INICIO BENEFICIOS-->
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
 
 
 {% endblock %}
