@@ -110,10 +110,11 @@ class ProductoViewset(viewsets.ModelViewSet):
 # VISTA DE HOME HTML #
 def home (request):
     return render(request, 'app/home.html')
-
+    
+@login_required
 # VISTA DE GALERIA HTML #
-def galeria(request):
-    return render(request, 'app/galeria.html') 
+def fundacion(request):
+    return render(request, 'app/fundacion.html') 
 
 @login_required
 # VISTA DE TIENDA # 
