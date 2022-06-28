@@ -60,7 +60,7 @@ Esta instruccion creara las categorias de los productos, en la seccion de agrega
 
 
 
-                    CREAR Y ACCEDER A TOKENS
+ CREAR Y ACCEDER A TOKENS
 
 La consola de comandos es capaz de generar token a los usuarios a travez del modulo HTTPIE 
 1.. INSTALACION:
