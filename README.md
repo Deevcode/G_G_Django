@@ -18,9 +18,9 @@ CONEXION A LA BASE DE DATOS ORACLE 19C EXPRESS EDITION
 
 2. 1 Crear el usuario en la base de datos oracle
 
-                                        CREATE USER c##tienda IDENTIFIED BY tienda;
-                                        GRANT CONNECT, RESOURCE TO c##tienda;
-                                        ALTER USER c##tienda DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS;
+                        CREATE USER c##tienda IDENTIFIED BY tienda;
+                        GRANT CONNECT, RESOURCE TO c##tienda;
+                        ALTER USER c##tienda DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS;
 
 
 2. 2 Antes de conectarse a la base de datos debera borrar todas las tablas de la base de datos.
