@@ -40,10 +40,22 @@ header > div {
     align-items: center;
 }
 
+.carrusel {
+    width: 87%;
+    height: 87%;
+    opacity: 80%;
+}
+
+
+.boto {
+    color: beige;
+}
+
 .logo {
     width: 100px;
     margin-left: 20px;
 }
+
 
 nav {
     display: flex;

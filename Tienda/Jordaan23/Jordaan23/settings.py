@@ -50,7 +50,18 @@ INSTALLED_APPS = [
     'crispy_forms',
     'rest_framework',
     'pwa',
+    'rest_framework.authtoken',
 ]
+#VALIDACION EN EL API VIEWS
+
+#REST_FRAMEWORK = {
+#    'DEFAULT_AUTHENTICATION_CLASSES': (
+#        'rest_framework.authentication.TokenAuthentication',
+#    ),
+#    'DEFAULT_PERMISSION_CLASSES': (
+#        'rest_framework.permissions.IsAuthenticated',
+#    ),
+#}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -90,10 +101,25 @@ WSGI_APPLICATION = 'Jordaan23.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.Jordaan23',
+#    }
+#}
+#   COMENTAR LA CONEXION A BASE DE DATOS SQLITE 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.Jordaan23',
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': '127.0.0.1:1521/xe',
+        'USER': 'c##tienda',
+        'PASSWORD': 'tienda',
+        'TEST': {
+            'USER': 'default_test',
+            'TBLSPACE': 'default_test_tbls',
+            'TBLSPACE_TEMP': 'default_test_tbls_temp',
+        }
     }
 }
 

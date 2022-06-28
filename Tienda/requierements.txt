@@ -1,4 +1,4 @@
-django == 4.0.4
+django 
 pillow
 django-admin-interface
 django-seed
@@ -6,3 +6,4 @@ django-crispy-forms
 cx_oracle
 django-rest-framework
 django-pwa
+httpie
