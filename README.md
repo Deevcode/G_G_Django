@@ -76,5 +76,5 @@ La consola de comandos es capaz de generar token a los usuarios a travez del mod
 3.. CHECKIAR EL TOKEN EN EL ADMIN DE DJANGO EN SECCION DE TOKENS
 4.. AUTORIZAR A VER EL CONTENIDO DE LA API EN CONSOLA:
 
-        http://localhost:8000/api/producto/ "Authorization: Token ab9ed0c536303b0b1501171bf0e7278adf1c305e"
+        http://localhost:8000/api/producto/ "Authorization: Token [token]"
 5.. SE DEBE PODER VER EL CONTENIDO DE LA API.
