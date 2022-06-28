@@ -1,6 +1,6 @@
 # G_G_Django
 Proyecto Guetto Garden integrado con Django y Oracle.
-#-----------------------------------------------------------------------------------------------------#
+
                 CONFIGURACIONES GENERALES DEL PROYECTO
 
 INSTALAR DEPENDENCIAS DEL PROYECTO
@@ -59,10 +59,7 @@ Esta instruccion creara las categorias de los productos, en la seccion de agrega
                         python manage.py runserver
 
 
-#-----------------------------------------------------------------------------------------------------#
 
-
-#-----------------------------------------------------------------------------------------------------#
                     CREAR Y ACCEDER A TOKENS
 
 La consola de comandos es capaz de generar token a los usuarios a travez del modulo HTTPIE 
@@ -81,4 +78,3 @@ La consola de comandos es capaz de generar token a los usuarios a travez del mod
 
                 http://localhost:8000/api/producto/ "Authorization: Token ab9ed0c536303b0b1501171bf0e7278adf1c305e"
 5.. SE DEBE PODER VER EL CONTENIDO DE LA API.
-#-----------------------------------------------------------------------------------------------------#
