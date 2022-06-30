@@ -57,7 +57,7 @@ class Login(FormView):
 
     def form_valid(self,form):
         user = authenticate(username = form.cleaned_data['username'], password = form.cleaned_data['password'])
-        token,_ = Token.objects.get_or_create(user = user)
+        token = Token.objects.get_or_create(user = user)
         if token:
             login(self.request, form.get_user())
             return super(Login,self).form_valid(form)

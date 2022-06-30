@@ -16,7 +16,7 @@ class Producto(models.Model):
     precio = models.IntegerField()
     descripcion = models.TextField()
     categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
-    fecha_publicacion = models.DateField()
+    fecha_publicacion = models.DateField(auto_now_add=True)
   
     imagen = models.ImageField(upload_to="productos", null=True)
 
