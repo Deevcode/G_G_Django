@@ -33,38 +33,43 @@
     <div class="card-body">
         <h2>LISTADO DE PRODCUTOS</h2>
         <hr>
-        <table class="table table-striped tabl-hover table-responsive-sm"> 
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Categoria</th>
-                <th>Opciones</th>
-            </tr>
-
-            {% for p in entity %}
-            <tr>
-                <td>{{ p.id }}</td>
-                <td>{{ p.nombre | title }}</td>
-                <td>${{ p.precio | intcomma }}</td>
-                <td>{{ p.categoria | title }}</td>
-                <td>
-                    <!--VALIDA SI EL USUARIO INGRESADO TIENE PERMISOS PARA MODIFICAR LOS PRODUCTOS-->
-                    {% if perms.core.change_producto %}
-                    <a href="{% url 'modificar_producto' p.id %}" class="btn btn-info btn-sm">Modificar</a>
-                    {% endif %}
-                    <!--VALIDA SI EL USUARIO INGRESADO TIENE PERMISOS PARA ELIMINAR LOS PRODUCTOS-->
-                    {% if perms.core.delete_producto %}
-                    <a onclick="eliminarProducto({{p.id}})" class="btn btn-danger btn-sm">Eliminar</a>
-                    {% endif %}
-                </td>
-            </tr>
-            {% endfor %}
-
-        </table>
-        <div>
-            {% include 'app/paginator.html' %}
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-striped tabl-hover table-responsive-sm"> 
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <!--<th scope="col">Categoria</th>--><!--LA CATEGORIA NO SE INCLUYE DEBIDO A QUE NO ES CAPAZ DE HACERLO RESPOSIVO-->
+                        <th scope="col">Opciones</th>
+                    </tr>
+        
+                    {% for p in entity %}
+                    <tr>
+                        <td>{{ p.id }}</td>
+                        <td>{{ p.nombre | title }}</td>
+                        <td>${{ p.precio | intcomma }}</td>
+                        <!--<td>{{ p.categoria | title }}</td>--><!--LA CATEGORIA NO SE INCLUYE DEBIDO A QUE NO ES CAPAZ DE HACERLO RESPOSIVO-->
+                        <td>
+                            <!--VALIDA SI EL USUARIO INGRESADO TIENE PERMISOS PARA MODIFICAR LOS PRODUCTOS-->
+                            {% if perms.app.change_producto %}
+                            <a href="{% url 'modificar_producto' p.id %}" class="btn btn-info btn-sm fontt">Modificar</a>
+                            {% endif %}
+                            <!--VALIDA SI EL USUARIO INGRESADO TIENE PERMISOS PARA ELIMINAR LOS PRODUCTOS-->
+                            {% if perms.app.delete_producto %}
+                            <a onclick="eliminarProducto({{p.id}})" class="btn btn-danger btn-sm fontt">Eliminar</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+        
+                </table>
+                <div>
+                    {% include 'app/paginator.html' %}
+                </div>
+            </div>
         </div>
+        
     </div>
 </div> 
 {% endblock %}

@@ -7,10 +7,80 @@
             "nombre": "Plantas"
         },
         "categoria_id": 1,
-        "nombre": "jose",
+        "nombre": "Tierra de hoja 50LT",
         "precio": 20000,
-        "descripcion": "juan",
-        "fecha_publicacion": "2022-06-12",
-        "imagen": "http://127.0.0.1:8000/media/productos/tierra.png"
+        "descripcion": "tierra de hoja seleccion",
+        "fecha_publicacion": "2022-06-28",
+        "imagen": "http://127.0.0.1:8000/media/productos/tierra_imZVdOq.png"
+    },
+    {
+        "id": "4",
+        "nombre_categoria": "Plantas",
+        "categoria": {
+            "id": 1,
+            "nombre": "Plantas"
+        },
+        "categoria_id": 1,
+        "nombre": "Planta Ficus",
+        "precio": 17990,
+        "descripcion": "Planta ficus cultivadas en el norte de argentina, de la frontera a tu jardín.",
+        "fecha_publicacion": "2022-07-10",
+        "imagen": "http://127.0.0.1:8000/media/productos/planta-edit.png"
+    },
+    {
+        "id": "5",
+        "nombre_categoria": "Herramientas",
+        "categoria": {
+            "id": 2,
+            "nombre": "Herramientas"
+        },
+        "categoria_id": 2,
+        "nombre": "Regadera Metalica",
+        "precio": 26990,
+        "descripcion": "Regadera de acero inoxidable de color azul y verde.",
+        "fecha_publicacion": "2022-07-10",
+        "imagen": "http://127.0.0.1:8000/media/productos/regadera.png"
+    },
+    {
+        "id": "2",
+        "nombre_categoria": "Herramientas",
+        "categoria": {
+            "id": 2,
+            "nombre": "Herramientas"
+        },
+        "categoria_id": 2,
+        "nombre": "Pala Metalica",
+        "precio": 22990,
+        "descripcion": "Pala metálica de acero inoxidable, ademas de mango de madera de pino oregon.",
+        "fecha_publicacion": "2022-07-10",
+        "imagen": "http://127.0.0.1:8000/media/productos/pala.png"
+    },
+    {
+        "id": "3",
+        "nombre_categoria": "Plantas",
+        "categoria": {
+            "id": 1,
+            "nombre": "Plantas"
+        },
+        "categoria_id": 1,
+        "nombre": "Palmera Americana",
+        "precio": 46990,
+        "descripcion": "Palmera americana, familia África oriente, sepa de oriente medio con cruces desérticos, esenciales en tu espacio de decoración.",
+        "fecha_publicacion": "2022-07-10",
+        "imagen": "http://127.0.0.1:8000/media/productos/palmera.png"
+    },
+    {
+        "id": "6",
+        "nombre_categoria": "Herramientas",
+        "categoria": {
+            "id": 2,
+            "nombre": "Herramientas"
+        },
+        "categoria_id": 2,
+        "nombre": "Tijeras de podar",
+        "precio": 29990,
+        "descripcion": "Tijeras metálicas para podar césped.",
+        "fecha_publicacion": "2022-07-10",
+        "imagen": "http://127.0.0.1:8000/media/productos/tijeras.png"
     }
 ]

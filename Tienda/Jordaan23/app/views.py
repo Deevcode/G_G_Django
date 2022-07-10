@@ -110,9 +110,10 @@ class ProductoViewset(viewsets.ModelViewSet):
 # VISTA DE HOME HTML #
 def home (request):
     return render(request, 'app/home.html')
-    
+
+# PERMISO DE LOGIN REQUERIDO
 @login_required
-# VISTA DE GALERIA HTML #
+# VISTA DE FUNDACION HTML #
 def fundacion(request):
     return render(request, 'app/fundacion.html') 
 
@@ -139,6 +140,14 @@ def contacto(request):
         else:
             data["form"]  = formulario  
     return render(request, 'app/contacto.html', data)
+
+# PERMISO DE LOGIN REQUERIDO
+@login_required
+# VISTA DE CARRITO
+def carrito(request):
+    return render(request, 'app/carrito.html')
+
+
 #-------------------------------------------------------------------------------------------------------------------
 
 #--------------------------------------------- VISTAS CON PERMISOS -----------------------------------------------
