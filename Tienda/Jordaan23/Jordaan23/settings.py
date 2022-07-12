@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'pwa',
     'rest_framework.authtoken',
 ]
-#VALIDACION EN EL API VIEWS
+#------------------------------------------------------------------------------------------------------------------------------
+# METODO DE VALIDACION DE LA API
 
 #REST_FRAMEWORK = {
 #    'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -62,7 +63,7 @@ INSTALLED_APPS = [
 #        'rest_framework.permissions.IsAuthenticated',
 #    ),
 #}
-
+#-------------------------------------------------------------------------------------------------------------------------------
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 X_FRAME_OPTIONS='SAMEORIGIN'
