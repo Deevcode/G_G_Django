@@ -147,6 +147,9 @@ def contacto(request):
 def carrito(request):
     return render(request, 'app/carrito.html')
 
+# VISTA DE COMPRAS
+def compras(request):
+    return render(request, 'app/compras.html')
 
 #-------------------------------------------------------------------------------------------------------------------
 
