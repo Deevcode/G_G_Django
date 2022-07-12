@@ -18,14 +18,14 @@ CONEXION A LA BASE DE DATOS ORACLE 19C EXPRESS EDITION
 
 2. 1 Crear el usuario en la base de datos oracle
 
-                        CREATE USER c##tienda IDENTIFIED BY tienda;
-                        GRANT CONNECT, RESOURCE TO c##tienda;
-                        ALTER USER c##tienda DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS;
+                        CREATE USER c##admin IDENTIFIED BY "admin134";
+                        GRANT CONNECT, RESOURCE TO c##admin;
+                        ALTER USER c##admin DEFAULT TABLESPACE USERS QUOTA UNLIMITED ON USERS;
 
 
 2. 2 Antes de conectarse a la base de datos debera borrar todas las tablas de la base de datos.
 
-                                        DROP USER c##tienda CASCADE;
+                                        DROP USER c##admin CASCADE;
 
 
 2. 3 Luego debera conectarse a la base de datos ORACLE XE
@@ -36,7 +36,7 @@ CREANDO SUPER USUARIO ADMIN DEL SITIO
 
                             python manage.py createsuperuser
 
-                                    User: Jordaan23
+                                    User: admin
                                     Pass: Casita1760
 
 
@@ -70,7 +70,7 @@ La consola de comandos es capaz de generar token a los usuarios a travez del mod
 
 2.. GENERAR TOKEN:
 
-                http http://localhost:8000/api_generate_token/ username="Jordaan23" password="Casita176"
+                http http://localhost:8000/api_generate_token/ username="admin" password="Casita176"
 
 
 3.. CHECKIAR EL TOKEN EN EL ADMIN DE DJANGO EN SECCION DE TOKENS
