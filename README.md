@@ -5,6 +5,11 @@ Proyecto Guetto Garden integrado con Django y Oracle.
 
 INSTALAR DEPENDENCIAS DEL PROYECTO
 
+django 4.0.4
+python 3.9
+oracle xe 19c
+bootstrap 4
+
 1. Lo primero que debe hacer sera generar los modulos necesarios para ejecutar el proyecto, para esto devera acceder a la caprta /Django en la cual habra un archivo documento de texto que salla [    requierements.txt   ], ejecutando la siguiente sentencia en la consola de comandos (cmd).
 
                                         pip install -r requierements.txt      
