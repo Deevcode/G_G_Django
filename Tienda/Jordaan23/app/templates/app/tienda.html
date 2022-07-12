@@ -47,7 +47,7 @@
                         <h2>{{p.nombre | title }}</h2>
                         <h3>${{p.precio | intcomma }}</h3>
                         <center>
-                            <a href="#" class="btn btn-primary btn-sm">Comprar</a>
+                            <a href="{% url 'pago' %}" class="btn btn-primary btn-sm">Comprar</a>
                         </center>
                     </div>
                     

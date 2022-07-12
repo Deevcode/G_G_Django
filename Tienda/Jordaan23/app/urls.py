@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import CategoriaList, carrito, compras, extra_page, fundacion, home , contacto , agregar_producto, listar_producto, modificar_producto, eliminar_producto, registro, politicas , ProductoViewset, CategoriaViewset
+from .views import CategoriaList, carrito, compras, extra_page, fundacion, home , contacto , agregar_producto, listar_producto, modificar_producto, eliminar_producto, pago, registro, politicas , ProductoViewset, CategoriaViewset
 from rest_framework import routers
 from . import views
 
@@ -15,6 +15,7 @@ urlpatterns = [
     path('contacto/', contacto,name="contacto"),
     path('carrito/', carrito, name="carrito"),
     path('compras/', compras, name="compras"),
+    path('pago/', pago, name="pago"),
     path('agregar-producto/', agregar_producto,name="agregar_producto"),
     path('listar-producto/', listar_producto, name="listar_producto"),
     path('tienda/', extra_page, name="tienda"),

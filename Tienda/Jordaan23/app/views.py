@@ -151,6 +151,9 @@ def carrito(request):
 def compras(request):
     return render(request, 'app/compras.html')
 
+# VISTA DE COMPRAS
+def pago(request):
+    return render(request, 'app/pago.html')
 #-------------------------------------------------------------------------------------------------------------------
 
 #--------------------------------------------- VISTAS CON PERMISOS -----------------------------------------------

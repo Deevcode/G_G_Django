@@ -19,8 +19,8 @@
     <div class="card">
         <div class="card-body">
             <div class="payment-title">
-                <h1>Suscribete a la funcacion</h1>
-                <h3>con tu aporte ayudas nuestra mision</h3>
+                <h1>Poral de pagos</h1>
+                <h3></h3>
             </div>
             <div class="container preload">
                 <div class="creditcard">
@@ -120,6 +120,10 @@
             <center>
                 <div class="form-container">
                     <div class="field-container">
+                        <label for="name">Direccion de envio</label>
+                        <input id="name" maxlength="20" type="text" placeholder="Pedro Ramirez 01394">
+                    </div>
+                    <div class="field-container">
                         <label for="name">Nombre en Tarjeta</label>
                         <input id="name" maxlength="20" type="text" placeholder="MOISES RUBIO">
                     </div>
@@ -132,12 +136,12 @@
                         <input id="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="01/23">
                     </div>
                     <div class="field-container">
-                        <label for="securitycode">Codigo de seguridad</label>
-                        <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="1234">
+                        <label for="securitycode">Dinero a pagar ($)</label>
+                        <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="cantidad exacta de la compra">
                     </div>
                     <div class="field-container">
-                        <label for="securitycode">Dinero a donar ($)</label>
-                        <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="25000">
+                        <label for="securitycode">Codigo de seguridad</label>
+                        <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="1234">
                     </div>
                     <div class="field-container" id="enviar">
                         <label for="securitycode" >Tarjeta</label>
@@ -155,8 +159,8 @@
                 <div class="row">
     
                     <div class="col">
-                        <center><a href="{% url 'fundacion' %}"><button type="button" class="btn btn-info btn-lg boto">Donar Aqui</button></a></center>   
-                        <center><a href="{% url 'home' %}"><button type="button" class="btn btn-info btn-lg boto">VOLVER</button></a></center>
+                        <center><a href="https://www.webpay.cl/portalpagodirecto/pages/index.jsf"><button type="button" class="btn btn-info btn-lg boto">PAGAR AQUI</button></a></center>   
+                        <center><a href="{% url 'tienda' %}"><button type="button" class="btn btn-info btn-lg boto">VOLVER</button></a></center>  
                     </div>
                 </div>
             </div>

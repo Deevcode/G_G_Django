@@ -53,11 +53,11 @@
                         <td>
                             <!--VALIDA SI EL USUARIO INGRESADO TIENE PERMISOS PARA MODIFICAR LOS PRODUCTOS-->
                             {% if perms.app.change_producto %}
-                            <a href="{% url 'modificar_producto' p.id %}" class="btn btn-info btn-sm fontt">Modificar</a>
+                            <a href="{% url 'modificar_producto' p.id %}" class="btn btn-info btn-sm">Modificar</a>
                             {% endif %}
                             <!--VALIDA SI EL USUARIO INGRESADO TIENE PERMISOS PARA ELIMINAR LOS PRODUCTOS-->
                             {% if perms.app.delete_producto %}
-                            <a onclick="eliminarProducto({{p.id}})" class="btn btn-danger btn-sm fontt">Eliminar</a>
+                            <a onclick="eliminarProducto({{p.id}})" class="btn btn-danger btn-sm">Eliminar</a>
                             {% endif %}
                         </td>
                     </tr>
