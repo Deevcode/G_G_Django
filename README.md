@@ -70,7 +70,8 @@ La consola de comandos es capaz de generar token a los usuarios a travez del mod
 
 2.. GENERAR TOKEN:
 
-                http http://localhost:8000/api_generate_token/ username="Jordaan23" password="Casita176"
+                http http://localhost:8000/api_generate_token/ username="Jordaan23" password="Casita1760"
+                http http://localhost:8000/api_generate_token/ username="Patricio" password="Casita1760"
 
 
 3.. CHECKIAR EL TOKEN EN EL ADMIN DE DJANGO EN SECCION DE TOKENS
