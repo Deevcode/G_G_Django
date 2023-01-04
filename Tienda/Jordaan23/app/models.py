@@ -25,19 +25,20 @@ class Producto(models.Model):
 
 # SELECTOR DEL MODELO DE CONTACTO
 opciones = [
-    [0, "Seleccione Region"],
-    [1, "region 1"],
-    [2, "region 2"],
-    [3, "region 3"],
-    [4, "region 4"]
+    [0, "Seleccione Consulta"],
+    [1, "Envios a regiones"],
+    [2, "Compras mayoristas"],
+    [3, "Banquetera"],
+    [4, "Eventos masivos"]
 ]
 # MODELO DE CONTACTO
 class Contacto(models.Model):
     name = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     correo = models.EmailField()
-    region = models.IntegerField(choices=opciones)
-    avisos = models.BooleanField()
+    consulta = models.IntegerField(choices=opciones)
+    terminos = models.BooleanField()
+    texto = models.TextField()
 
     def __str__(self):
         return self.name
